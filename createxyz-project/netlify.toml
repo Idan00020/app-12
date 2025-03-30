@@ -1,18 +1,10 @@
 [build]
-  command = "npm run build"
+  command = "npm install && npx prisma generate && npm run build"
   publish = ".next"
 
 [build.environment]
   POSTGRES_URL = "placeholder" # This will be overridden by Netlify's environment variables
+  NODE_VERSION = "18"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-
-# Cache Prisma binary
-[[plugins]]
-  package = "netlify-plugin-cache"
-    [plugins.inputs]
-      paths = [
-        "node_modules/.prisma",
-        "node_modules/@prisma/client"
-      ]
