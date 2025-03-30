@@ -435,8 +435,8 @@ export default function MainComponent() {
                 ) : (
                   <>
                     <div className="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden flex justify-center">
-                    {cageData?.youtube_url ? (
-                  <YouTubePlayer videoId={cageData.youtube_url} />
+                    {process.env.POSTGRES_URL?.youtube_url ? (
+                  <YouTubePlayer videoId={process.env.POSTGRES_URL.youtube_url} />
                     ) : (
                       <div className="text-gray-500 dark:text-gray-300">
                         No YouTube URL available
