@@ -1,0 +1,27 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("POSTGRES_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Cage {
+  id                Int       @id @default(autoincrement())
+  name              String
+  researcher        String
+  status           String    @default("Connected")
+  created_at       DateTime  @default(now())
+  stream_url       String?
+  last_cleaning_time DateTime?
+  cleaning_frequency Int      @default(24)
+  cleaning_speed    Int      @default(50)
+  device_id        String?
+  last_latitude    Float?
+  last_longitude   Float?
+  last_update_time DateTime?
+  youtube_url      String?
+
+  @@map("cages")
+}
