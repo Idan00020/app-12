@@ -1,5 +1,5 @@
 [build]
-  command = "npx prisma generate && npm run build"
+  command = "npm run netlify-build"
   publish = ".next"
 
 [build.environment]
@@ -8,8 +8,6 @@
   NPM_FLAGS = "--no-audit --no-fund"
   NEXT_TELEMETRY_DISABLED = "1"
   PRISMA_HIDE_UPDATE_MESSAGE = "true"
-  PRISMA_GENERATE_DATAPROXY = "true"
-  PRISMA_GENERATE_SKIP_DUPLICATE_PRISMA_CLIENT = "true"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
