@@ -1,10 +1,17 @@
 [build]
-  command = "npm install && npx prisma generate && npm run build"
+  command = """
+    npm cache clean --force
+    rm -rf node_modules
+    npm install
+    npx prisma generate
+    npx prisma generate && npm run build
+    """
   publish = ".next"
 
 [build.environment]
   POSTGRES_URL = "placeholder" # This will be overridden by Netlify's environment variables
   NODE_VERSION = "18"
+  NPM_FLAGS = "--no-package-lock"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
