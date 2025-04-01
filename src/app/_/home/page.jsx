@@ -7,7 +7,7 @@ function MainComponent() {
   const [error, setError] = useState(null);
   const [searchInput, setSearchInput] = useState("");
   const [predictions, setPredictions] = useState([]);
-  const [lastLocation, setLastLocation] = useState({ lat: 32.0853, lng: 34.7818 });
+  const [lastLocation, setLastLocation] = useState({ lat: 31.939250205295398, lng: 34.796533033531134 });
   const [selectedCage, setSelectedCage] = useState(null);
 
   // Fetch cages from the database

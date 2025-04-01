@@ -30,8 +30,15 @@ export default function MainComponent() {
   const [updateSuccess, setUpdateSuccess] = useState(false);
 
   const handleCageClick = (cageId) => {
-    router.push(`/cages/${cageId}`);
+    router.push(`/cage/${cageId}`);
   };
+  
+  return (
+    <div>
+      <button onClick={() => handleCageClick(3)}>מעבר לכלוב 3</button>
+    </div>
+  );
+}
 
   useEffect(() => {
     const loadCageData = async () => {
